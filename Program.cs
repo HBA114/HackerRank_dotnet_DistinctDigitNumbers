@@ -47,7 +47,7 @@
 
         for (int i = 0; i < arrRows; i++)
         {
-            arr.Add(Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList());
+            arr.Add(Console.ReadLine()!.TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList());
         }
 
         countNumbers(arr);
