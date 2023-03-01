@@ -7,7 +7,7 @@
         {
             int n = arr[i][0];
             int m = arr[i][1];
-            int[] generatedArray = Enumerable.Range(n, m - (n - 1)).ToArray();  // range was (m - n)
+            int[] generatedArray = Enumerable.Range(n, m - (n - 1)).ToArray();  //! Mistake 1: count was (m - n)
 
             List<int> validArr = new List<int>();
             for (int j = 0; j < generatedArray.Count(); j++)
@@ -20,7 +20,7 @@
 
     static bool isValid(int number)
     {
-        char[] numbers = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' }; // was string
+        char[] numbers = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' }; //! Mistake 2: array type and elements was string
         string strNumber = number.ToString();
 
         for (int i = 0; i < numbers.Count(); i++)
@@ -28,8 +28,8 @@
             int count = 0;
             for (int j = 0; j < strNumber.Count(); j++)
             {
-                if (strNumber[j] == numbers[i])
-                {
+                if (strNumber[j] == numbers[i])     //! Mistake 3: control logic was strNumber[j].Equals(numbers[i]) with string(numbers[i]) and char(strNumber[j]) type
+                {                                   //! so i failed test because of this simple mistakes
                     count++;
                 }
             }
